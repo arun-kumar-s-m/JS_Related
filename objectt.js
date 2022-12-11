@@ -99,4 +99,4 @@ let no = {
     "%1" : 'one',
     '*2' : 'two'
 };
-console.log(no); 
+console.log(no); // O/P : { '+5': 'five', '#3': 'three', '-4': 'four', '%1': 'one', '*2': 'two' }
