@@ -36,3 +36,8 @@ console.log('value of key1 in obj2 is',obj2.key1); // O/P : value of key1 in obj
 //Shallow copy is occurring since the reference to the memory location of obj1 is being saved in the value of obj2
 
 //DEEP COPY in OBJECTS - Refer Object.js file for reference
+
+//Constant in JS 
+const a = 13;
+a = 14; // throws error since constant variables cannot be modified TypeError: Assignment to constant variable.
+
