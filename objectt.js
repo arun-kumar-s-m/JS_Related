@@ -99,4 +99,68 @@ let no = {
     "%1" : 'one',
     '*2' : 'two'
 };
-console.log(no); // O/P : { '+5': 'five', '#3': 'three', '-4': 'four', '%1': 'one', '*2': 'two' }
+console.log(no); // O/P : { '+5': 'five', '#3': 'three', '-4': 'four', '%1': 'one', '*2': 'two' } 
+
+let no1 = {
+    "+5" : 'five',
+    "#3" : 'three',
+    "-4" : 'four',
+    "%1" : 'one',
+    '*2' : 'two'
+};
+console.log(no == no1); // O/P false Eventhough both the objects have same key value pairs the value of memory location being pointed by no and no1 differs so false is returned
+console.log(no === no1); // O/P false since memory location differs 
+
+let no3 = no;
+console.log(no3 == no); // O/P : true since both the variable no3 and no refers to the same memory location
+console.log(no3 === no); // O/P : true since value as well as type both are same
+
+
+// Whereas in the case of objects copying value from one object to another will affect the value of another object as well - SHALLOW COPY
+let obj1 = {
+    key1 : 'val1',
+    key2 : 'val2'
+};
+let obj2 = obj1;
+obj2.key1 = 'val3';
+console.log('value of key1 in obj1 is',obj1.key1); // O/P : value of key1 in obj1 is val3
+console.log('value of key1 in obj2 is',obj2.key1); // O/P : value of key1 in obj2 is val3
+//Shallow copy is occurring since the reference to the memory location of obj1 is being saved in the value of obj2
+
+//DEEP COPY OF OBJECTS
+//Solution 1 : 
+// Copying key and values one by one
+let no4 = {};
+for(let key in no1){
+    no4[key] = no1[key];
+}
+console.log(no4);
+no1[+5] = 'FIVE';
+console.log('no1[+5] = ',no1[+5],' no4[+5] :',no4['+5']); // O/P : no1[+5] =  FIVE  no4[+5] : five
+
+//Solution 2 : 
+let no2 = {50 : 'fifty'};
+let no5 = {};
+Object.assign(no5,no1,no2);
+console.log(no5);
+no2[50] = 'FIFTY';
+console.log('no2[50] = ',no2[50],' no4[50] :',no5[50]); // O/P : no2[50] =  FIFTY  no4[50] : fifty
+
+/* Other way of cloning using Object.assign
+let no5 = Object.assign({},no1,no2);
+ */
+let no6 = Object.assign({},no1,no2);
+console.log(no6); /* O/P : 
+{
+    '5': 'FIVE',
+    '50': 'FIFTY',
+    '+5': 'five',
+    '#3': 'three',
+    '-4': 'four',
+    '%1': 'one',
+    '*2': 'two'
+} */
+
+//While cloning when key already exists then its value gets overriden
+let no7 = Object.assign({'50': 'SIXTY'},no6,{'50':'SEVENTY'});
+console.log(no7[50]); // O/P : SEVENTY
