@@ -39,5 +39,47 @@ console.log('value of key1 in obj2 is',obj2.key1); // O/P : value of key1 in obj
 
 //Constant in JS 
 const a = 13;
-a = 14; // throws error since constant variables cannot be modified TypeError: Assignment to constant variable.
+// a = 14; // throws error since constant variables cannot be modified TypeError: Assignment to constant variable.
 
+// DATATYPES
+// NUMBERS Range - ±(2^53-1)
+let number_1 = 1,number_2 = 1.234;
+// number values can be constants like Infinity, -Infinity, NaN
+let number_4 = 1 / 0;
+let number_5 = 1 - number_4;
+let number_6 = 'Arun' * 2;
+console.log('number_4  : ',number_4,'number_5 : ',number_5,'number_6 : ',number_6);
+// Checking constant number variables
+if(number_4 === Infinity){
+    console.log('Value of number_4 is Infinity'); // will be printed in console
+}
+if(number_5 === -Infinity){
+    console.log('Value of number_5 is -Infinity'); // will be printed in console
+}
+if(isNaN(number_6)){
+    console.log('Value of number_6 is NaN'); // will be printed in console
+}
+
+//BIGINT Range > +(2^53-1) and < -(2^53-1)
+let bigNum = 1234567890123456789012345678901234567890n; // BigInt numbers end with n 
+
+//STRINGS
+let aa = "mnop",bb = 'ijkl';
+let cc = `abcd ${aa} ${bb}`; // Backstashes values of aa and bb are appended to cc variable
+console.log('a : ',aa,' b : ',bb,' c : ',cc); // a :  mnop  b :  ijkl  c :  abcd mnop ijkl
+
+//Boolean
+let dd = true,ee = false;
+let nk = 1 > 0; // true
+console.log(nk);
+
+//null and undefined
+let gg = null,hh; // hh value is undefined here
+
+//Objects 
+//Refer Object.js file 
+
+//typeof 
+//typeof(n) or typeof n both can be used
+console.log(typeof(1));
+console.log(typeof 2);
