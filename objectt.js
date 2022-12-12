@@ -265,3 +265,33 @@ temp_obj.func?.();
 // ?.[]
 console.log(temp_obj?.['key1']);
 console.log(temp2_obj?.['key1']);
+
+// Symbols
+let id1 = Symbol("sample");
+let id2 = Symbol("sample");
+let objjj = {};
+objjj[id1] = "sdsad";
+objjj[id2] = "dsd";
+console.log(objjj); // { [Symbol(sample)]: 'sdsad', [Symbol(sample)]: 'dsd' } But Symbol(sample) refers to different keys when used as Symbols in case of Strings they refer to the same name
+for (const [key, value] of Object.entries(objjj)) {
+  console.log(`${key}: ${value}`);
+}
+
+"use strict";
+
+let user = {
+  name: "John",
+  money: 1000,
+
+  [Symbol.toPrimitive](hint) {
+    console.log(`hint: ${hint}`);
+    return hint == "string" ? `{name: "${this.name}"}` : this.money;
+  }
+};
+
+// conversions demo:
+console.log(user); // hint: string -> {name: "John"}
+console.log(0-user); // hint: number -> 1000
+console.log(user + 500); // hint: default -> 1500
+
+
