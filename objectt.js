@@ -226,3 +226,42 @@ v1.fn = fn;
 v2.fn = fn;
 v1.fn(); // O/P : 1 since this in fn() refers to object v1 here 
 v2.fn(); // O/P : 2 since this in fn() refers to object v2 here
+
+//Constructor for creating many Objects in JS 
+function createEmployeee(name, native, id,team){
+    this.name = name;
+    this.native = native;
+    this.id = id;
+    this.team = team;
+}
+let emp_1 = new createEmployeee('Arun_1','Dindigul',1,'Engineering'), emp_22 = new createEmployeee('Arun_2','Madurai',2,'sales'),emp_3 = new createEmployeee('Arun_3','Trichy',3,'Marketing');
+console.log('emp_1 : ',emp_1,'emp_2 : ',emp_22,'emp_3 : ',emp_3);
+// It is advisable to use first letter of the function name as capital letter - CreateEmployee
+// All functions except arrow functions can be used for creating new objects using new Constructor
+// implicitly there will be this = {} at first line of the constructor and return this at the last line of the constructor using which an object is created and returned
+
+// return statements are also possible in constructor in JS but they aren't commonly used - Refer https://javascript.info/constructor-new#return-from-constructors
+
+
+// ?. ?.() 
+// ?.
+let temp_obj = {
+    key1 : 'val 1',
+    func(){
+        console.log("Arun");
+    }
+};
+// console.log(temp_obj.key2.val2); Error since key2 doesn't exist TypeError: Cannot read properties of undefined (reading 'val2')
+ let y = temp_obj.key2?.val2; // It is proper way than temp_obj?.key2?.val2
+ console.log(y);
+//  let z = temp_obj.key2.val2;
+//  console.log(z); Error thrown
+
+// ?.() - For validating whether method exists or not
+let temp2_obj = {};
+console.log(temp2_obj.func?.());
+temp_obj.func?.();
+
+// ?.[]
+console.log(temp_obj?.['key1']);
+console.log(temp2_obj?.['key1']);

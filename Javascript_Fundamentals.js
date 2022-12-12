@@ -83,3 +83,29 @@ let gg = null,hh; // hh value is undefined here
 //typeof(n) or typeof n both can be used
 console.log(typeof(1));
 console.log(typeof 2);
+
+//Arrow functions
+// Simple and Single line Arrow functions
+let cubeANumber = n => n * n * n;
+console.log(cubeANumber(5));
+
+let welcomeToJS = () => console.log('Welcome to JAvscript');
+welcomeToJS();
+
+let prodOfNos = (a,b) => a * b;
+console.log(prodOfNos(5,3));
+
+//Multi line Arrow functions
+let addNumber = (a,b) =>{
+    let res = a + b;
+    return res;
+};
+console.log(addNumber(2,6));
+
+// nullish coalesing operator
+let alpha = null, beta = null,gamma = 'Arun';
+let varr = alpha ?? beta ?? gamma ?? 'Default'; // if value of alpha is defined(not null and not undefined) then alpha will be assigned to varr else beta will be checked and assigned accordingly
+console.log(varr); 
+
+let var_3 = 0,var__2 = ( var_3 || 100 ); // var_2 = 100 || checks for FIRST TRUTHY VALUE so it would consider even the variables with values as false , 0 , '' , null and undefined all as same
+console.log(var__2); // '??' is used to find out the FIRST DEFINED VALUE
