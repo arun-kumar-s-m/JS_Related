@@ -164,3 +164,65 @@ console.log(no6); /* O/P :
 //While cloning when key already exists then its value gets overriden
 let no7 = Object.assign({'50': 'SIXTY'},no6,{'50':'SEVENTY'});
 console.log(no7[50]); // O/P : SEVENTY
+
+// Objects containing functions as parameters
+// Way 1 : 
+let emp = {
+    name : 'Arun',
+    work : function(){
+        console.log('Working on the task provided');
+    }
+}
+emp.work();
+
+// Way 2 : inserting another function name as value to the parameter directly
+function work2_add(a,b){
+    return a + b;
+}
+emp.another_work = work2_add;
+console.log(emp.another_work(2,3));
+
+// Way 3 : Method shorthand - defining function inside the object directly
+let emp_2 = {
+    name : 'Arun 2',
+    work3(){
+        console.log("Work of employee 2");
+    }
+};
+emp_2.work3();
+
+// this keyword to refer the same object which we are using 
+// Eg 1
+emp_2.write = function(){
+    return this.name;
+}
+console.log(emp_2.write());
+// Eg 2
+let example = {
+    id : 'E01234',
+    fn(){
+        console.log(this.id);
+    }
+}
+example.fn();
+
+/* instead of this.id example.id can also be used but we have chances in future that when the example variable is referenced to null and another variable containing the shallow copy of example variable tries to access the function then error will be thrown
+let example = {
+    id : 'E01234',
+    fn(){
+        console.log(example.id);
+    }
+}
+let ex_obj = example;
+example = null;
+ex_obj.fn(); // throws error - TypeError: Cannot read properties of null (reading 'id') */
+
+// Two or many function parameters pointing to the same function 
+let v1 = {id : 1},v2 = {id : 2};
+function fn(){
+    console.log(this.id);
+}
+v1.fn = fn;
+v2.fn = fn;
+v1.fn(); // O/P : 1 since this in fn() refers to object v1 here 
+v2.fn(); // O/P : 2 since this in fn() refers to object v2 here
