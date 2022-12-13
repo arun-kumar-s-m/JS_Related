@@ -294,4 +294,36 @@ console.log(user); // hint: string -> {name: "John"}
 console.log(0-user); // hint: number -> 1000
 console.log(user + 500); // hint: default -> 1500
 
+let users ={
+    'emp1' : {
+        id : 1,
+        name : 'Arun_1'
+    },
+    'emp2' : {
+        id : 2,
+        name : 'Arun_2'
+    },
+    'emp3' : {
+        id : 3,
+        name : 'Arun_3'
+    }
+};
+console.log(Object.keys(users)); // [ 'emp1', 'emp2', 'emp3' ]
+console.log(Object.values(users));
+/*
+[
+  { id: 1, name: 'Arun_1' },
+  { id: 2, name: 'Arun_2' },
+  { id: 3, name: 'Arun_3' }
+]
+ */
+console.log(Object.entries(users));
+/*
+[
+  [ 'emp1', { id: 1, name: 'Arun_1' } ],
+  [ 'emp2', { id: 2, name: 'Arun_2' } ],
+  [ 'emp3', { id: 3, name: 'Arun_3' } ]
+]
+ */
+
 
