@@ -213,6 +213,82 @@ mango
  */
 
 
+// Date
+console.log('Today date is', new Date()); // O/P : Today date is 2022-12-14T06:32:36.029Z
+console.log('Date using timestamp is',new Date(1670998287000)); // O/P : Date using timestamp is 2022-12-14T06:11:27.000Z
+console.log('Date using DATE as STRING is',new Date('2021-08-15')); // O/P : Date using DATE as STRING is 2021-08-15T00:00:00.000Z
+console.log('Date by passing YEAR MONTH AND DATE ETC is',new Date(2022,10,23)); // O/P : Date by passing YEAR MONTH AND DATE ETC is 2022-11-22T18:30:00.000Z
+//getting Epoch time from Date using getTime() method
+let m = new Date().getTime();
+console.log('Time now in timestamp : ',m,'In Human readable format',new Date(m)); // O/P : Time now in timestamp :  1670999759700 In Human readable format 2022-12-14T06:35:59.700Z
+// finding individual dates from the Date object
+let mdate = new Date(m);
+console.log('********************');
+console.log('Current Year : ',mdate.getFullYear()); // Current Year 2022
+// Month value varies from 0 Jan to 11 Dec
+console.log('Current Month : ',mdate.getMonth()); // Current Month 11
+console.log('Current Date : ',mdate.getDate()); // Current Date 14
+// Day value varies from 0 Sun to 6 Sat
+console.log('Current Day : ',mdate.getDay()); // Current Day 3
+// Hours Minutes and seconds are given in our local TZ
+console.log('Current hour : ',mdate.getHours()); // Current hour :  12
+console.log('Current Minutes :  ',mdate.getMinutes()); // Current Minutes : 17
+console.log('Current Seconds :  ',mdate.getSeconds()); //Current Seconds : 10
+console.log('Current MilliSeconds :  ',mdate.getMilliseconds()); //Current MilliSeconds : 887
+
+// for getting UTC details same above with UTC in function 
+console.log('********************');
+console.log('Current Year : ',mdate.getUTCFullYear()); // Current Year 2022
+// Month value varies from 0 Jan to 11 Dec
+console.log('Current Month : ',mdate.getUTCMonth()); // Current Month 11
+console.log('Current Date : ',mdate.getUTCDate()); // Current Date 14
+// Day value varies from 0 Sun to 6 Sat
+console.log('Current Day : ',mdate.getUTCDay()); // Current Day 3
+// Hours Minutes and seconds are given in our local TZ
+console.log('Current hour : ',mdate.getUTCHours()); // Current hour :   6
+console.log('Current Minutes :  ',mdate.getUTCMinutes()); // Current Minutes : 52
+console.log('Current Seconds :  ',mdate.getUTCSeconds()); //Current Seconds :  43
+console.log('Current MilliSeconds :  ',mdate.getUTCMilliseconds()); //Current MilliSeconds : 966
+
+// TimezoneOffset = -330 -ve value means GMT + x minutes AND +ve value means GMT - x minutes
+console.log('Offset difference between ',mdate.getTimezoneOffset());
+
+// For getting timestamps there are 3 different ways
+// using Date.now() we can directly find the TIMESTAMP equivalent of the current time 
+let lll = new Date();
+console.log(lll.getTime()); // 1671003062608
+console.log(+lll); // 1671003062608
+console.log(Date.now()); // 1671003062608
+
+let user = new Map();
+user.set("name", "John");
+user.set("age", "30");
+
+for(let [key,value] of user){
+    console.log(key);
+    console.log(value);
+ }
+
+let [firstName, , title] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+console.log( title );
+let arr = ["John", "Smith"];
+let [firstNamee, surname] = arr;
+let [firstNamme, surnamme] = "John Smith".split(' ');
+
+let boj = {
+    id : 1,
+    nana : 'n9un'
+};
+let {id,nana} = boj;
+console.log(id); // 1
+console.log(nana); // n9un
+
+let {nana:nnana,id : nid} = boj;
+console.log(nnana);
+console.log(nid);
+
+
+
 
 
 
