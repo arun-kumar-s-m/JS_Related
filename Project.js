@@ -111,7 +111,7 @@ class Phone{
                 this.setPhoneLogs(temp);
             }
             else{
-                throw new Error(`Mentioned App name ${appname} not being installed kindly provide valid app name for opening`);
+                throw new InvalidInputError(`Mentioned App name ${appname} not being installed kindly provide valid app name for opening`);
             }
         }
         catch(error){
@@ -142,7 +142,7 @@ class Phone{
                 console.log('Running apps before closing ::: ',running_apps_now);
                 let indexOfTheAppToClose = running_apps_now.indexOf(appname);
                 if(indexOfTheAppToClose == -1){
-                    throw new Error(`Mentioned App ${appname} is not Running now currently`);
+                    throw new InvalidInputError(`Mentioned App ${appname} is not Running now currently`);
                 }
                 console.log('Index :  ',indexOfTheAppToClose,' App present  : ',running_apps_now[indexOfTheAppToClose]);
                 running_apps_now.splice(indexOfTheAppToClose,1);
@@ -155,7 +155,7 @@ class Phone{
                 this.setPhoneLogs(temp);
             }
             else{
-                throw new Error(`Mentioned App ${appname} is not Running now currently`);
+                throw new InvalidInputError(`Mentioned App ${appname} is not Running now currently`);
             }
         }
         catch(error){
@@ -235,11 +235,12 @@ class Android extends Phone{
     getCustomOsSize(){
         return this.#custom_os_size;
     }
-    takePhoto(){
+    takePhoto(obj){
+        console.log(obj.getModelName(),'is taking the photo!!!');
         console.log('........Taking Photo Smile Please ........');
     }
-    takePhotoWithDelay(x){
-        setTimeout(this.takePhoto,x * 1000);
+    takePhotoWithDelay(obj,x){
+        setTimeout(this.takePhoto,x * 1000,obj);
     }
 }
 class IoS extends Phone{
@@ -508,6 +509,13 @@ class Samsung_Z1_Ultra extends Samsung{
     }
 }
 
+class InvalidInputError extends Error{
+    constructor(message){
+        super(message);
+        this.name = 'InvalidInputError';
+    }
+}
+
 function print(obj){
     console.log('Model Name - ',obj.getModelName());
     console.log('Internal Memory - ',obj.getInternalMemory(),' ::: OS Version - ',obj.getOSVersion(),'::: Display - ',obj.getDisplay(),'::: OS Type - ',obj.getOSType(),'::: RAM - ',obj.getRAM(),'::: Brand - ',obj.getBrand());
@@ -539,7 +547,7 @@ oneplus8.closeapp("messages");
 console.log('***********');
 
 console.log();
-oneplus8.takePhotoWithDelay(2);
+oneplus8.takePhotoWithDelay(oneplus8,2);
 console.log('***********');
 oneplus8.printLogger();
 
@@ -550,7 +558,7 @@ samsung_Z1_Ultra.directorView();
 console.log('***********');
 
 console.log();
-samsung_Z1_Ultra.takePhotoWithDelay(5);
+samsung_Z1_Ultra.takePhotoWithDelay(samsung_Z1_Ultra,5);
 samsung_Z1_Ultra.printLogger();
 console.log('***********');
 
@@ -570,8 +578,10 @@ iphone14.printLogger();
 
 setInterval(runningapps,10000);
 function runningapps(){
+    console.log('------------------------');
     console.log('Apps running in OnePlus phone : ',oneplus8.getAppRunningNow());
     console.log('Apps running in iPhone 14 phone : ',iphone14.getAppRunningNow());
     console.log('Apps running in Samsung phone : ',samsung_Z1_Ultra.getAppRunningNow());
+    console.log('------------------------');
 }
 
