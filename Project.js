@@ -376,6 +376,12 @@ class OnePlus8 extends OnePlus{
     cloneAppsForMultipleAccountUse(){
         console.log('OnePlus 8 special feature : Cloning Apps for Multiple Account Use ');
     }
+    getPhoneDetails(){
+        let os_details = {};
+        os_details[this.getOSType()] = this.getOSVersion();
+        os_details[this.getCustomOs()] = this.getCustomOsVersion();
+        return os_details;
+    }
     installGeneralApps(){
         var obj = {
             whatsapp : {
@@ -393,6 +399,9 @@ class OnePlus8 extends OnePlus{
                 },
                 open_calls_tab : function(){
                     console.log('...WhatsApp Voice and Video calls open.....');
+                },
+                get_app_info : function(){
+                    console.log(this.constructor.name,' uses whatssApp version : ',this.version);
                 }
             },
             instagram : {
@@ -525,6 +534,31 @@ function print(obj){
     console.log('Available RAM now : ',obj.getAvailableRAM(),'GB');
 }
 
+function getInstalledApps(obj){
+    let appPresent = obj.getAppDetails();
+    let appWithVersions = {};
+    for(let [key,value] of Object.entries(appPresent)){
+        appWithVersions[key] = value.version;
+    }
+    return appWithVersions;
+}
+function cacheDecorator(func){
+    let cache = new Map();
+    return function(x){
+        let valueOfObject = x.constructor.name;
+        if(cache.has(valueOfObject)){
+            console.log('G E T T I N G   V A L U E   F R O M   C A C H E');
+            return cache.get(valueOfObject);
+        }
+        // console.log(x.constructor.name);
+        console.log(valueOfObject);
+        console.log('G E T T I N G   V A L U E   F R O M   M A I N  F U N C T I O N');
+        let res = func(x);
+        cache.set(valueOfObject,res);
+        return res;
+    }
+}
+
 console.log('***********');
 let oneplus8 = new OnePlus8();
 print(oneplus8);
@@ -539,6 +573,32 @@ oneplus8.openapp("youtube");
 console.log("---------");
 
 oneplus8.openapp("instagram");
+
+//         DECORATOR FUNCTION
+
+getInstalledApps = cacheDecorator(getInstalledApps);
+console.log('GETTING INSTALLED APP IN ONEPLUS 8');
+// console.log(getInstalledApps(oneplus8));
+console.log(getInstalledApps(oneplus8));
+console.log(getInstalledApps(oneplus8));
+console.log(getInstalledApps(oneplus8));
+
+/*
+    G E T T I N G   V A L U E   F R O M   M A I N  F U N C T I O N
+    { whatsapp: 72, instagram: 82, facebook: 68 }
+    G E T T I N G   V A L U E   F R O M   C A C H E
+    { whatsapp: 72, instagram: 82, facebook: 68 }
+    G E T T I N G   V A L U E   F R O M   C A C H E
+    { whatsapp: 72, instagram: 82, facebook: 68 }
+*/
+console.log('ASDDF : ',oneplus8.getAppDetails());
+// oneplus8.getAppDetails()['whatsapp'].get_app_info.bind(oneplus8);
+// setTimeout(oneplus8.getAppDetails().whatsapp.settings.get_app_info(),7000);
+let get_data = oneplus8.getPhoneDetails.bind(oneplus8);
+console.log('Getting phone data ');
+console.log(get_data());
+
+// console.log(obje);
 console.log('Running apps before closing : ',oneplus8.getAppRunningNow());
 console.log('Closing App now ');
 oneplus8.closeapp("whatsapp");
