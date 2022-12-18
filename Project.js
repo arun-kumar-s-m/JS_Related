@@ -534,7 +534,8 @@ function print(obj){
     console.log('Available RAM now : ',obj.getAvailableRAM(),'GB');
 }
 
-function getInstalledApps(obj){
+// Arrow functions with Multiple lines expressions
+let getInstalledApps = obj => {
     let appPresent = obj.getAppDetails();
     let appWithVersions = {};
     for(let [key,value] of Object.entries(appPresent)){
@@ -542,6 +543,14 @@ function getInstalledApps(obj){
     }
     return appWithVersions;
 }
+// function getInstalledApps(obj){
+//     let appPresent = obj.getAppDetails();
+//     let appWithVersions = {};
+//     for(let [key,value] of Object.entries(appPresent)){
+//         appWithVersions[key] = value.version;
+//     }
+//     return appWithVersions;
+// }
 function cacheDecorator(func){
     let cache = new Map();
     return function(x){
@@ -608,6 +617,10 @@ console.log('***********');
 
 console.log();
 oneplus8.takePhotoWithDelay(oneplus8,2);
+/*
+        OnePlus 8 is taking the photo!!!
+        ........Taking Photo Smile Please ........
+*/
 console.log('***********');
 oneplus8.printLogger();
 
@@ -619,6 +632,12 @@ console.log('***********');
 
 console.log();
 samsung_Z1_Ultra.takePhotoWithDelay(samsung_Z1_Ultra,5);
+
+/*
+    Samsung Z1 Ultra is taking the photo!!!
+    ........Taking Photo Smile Please ........
+*/
+
 samsung_Z1_Ultra.printLogger();
 console.log('***********');
 
@@ -645,3 +664,10 @@ function runningapps(){
     console.log('------------------------');
 }
 
+/*
+        ------------------------
+        Apps running in OnePlus phone :  [ 'instagram' ]
+        Apps running in iPhone 14 phone :  [ 'whatsapp', 'instagram' ]
+        Apps running in Samsung phone :  []
+        ------------------------
+*/
