@@ -1,0 +1,20 @@
+{
+  "name": "js_related",
+  "version": "1.0.0",
+  "description": "App based on working and basic functionalities of phones including apps running on it ",
+  "main": "Advanced_working_with_functions.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arun-kumar-s-m/JS_Related.git"
+  },
+  "author": "arunkumar.sm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arun-kumar-s-m/JS_Related/issues"
+  },
+  "homepage": "https://github.com/arun-kumar-s-m/JS_Related#readme"
+}
