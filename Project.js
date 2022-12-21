@@ -1022,3 +1022,382 @@ async function doPaymentAndGetVoucher(object){
     YOU HAVE RECEIVED A COUPON WORTH RS :  undefined Thanks for using GPay !!! 
     Status of transaction 1 is :  success
 */
+
+
+
+
+
+
+/*
+OUTPUT FOR ABOVE CODE : 
+[Running] node "/Users/arunkumarsm/Documents/JS_Related/Project.js"
+***********
+DATE OF LOG :  2022-12-21T14:14:03.033Z  ACTION_PERFORMED :  Assembling components of OnePlus8 phone
+TYPING BEFORE :  object
+PRINT BEFORE :  object
+TYPING dsf :  object
+PRINT AFTER :  object
+Model Name -  OnePlus 8
+Internal Memory -  128  ::: OS Version -  12 ::: Display -  OnePlus Display ::: OS Type -  Android ::: RAM -  8 ::: Brand -  OnePlus
+Custom OS Name -  Oxygen Custom OS Version - 10
+Available RAM now :  6.5 GB
+Oneplus vibrant display
+OnePlus 8 special feature : Cloning Apps for Multiple Account Use 
+OnePlus 8 special feature : Dynamic Refresh Rate
+Bank Account Details :  {
+  sbi: {
+    '12345678912345678': { account_name: 'Arun_1', upi_pin: '5678' },
+    '8765432187654321': { account_name: 'Arun_2', upi_pin: '2468' }
+  }
+}
+#############Open App Logger OnePlus8 {} 2022-12-21T14:14:03.034Z
+Available RAM before adding app :  6.5
+Available RAM after adding app :  6.267
+....WhatsApp Individual and Group Chats Open ....
+....WhatsApp Status Open ....
+Inside send_file_to_user function :  /Downloads/sample.jpg
+Value of filepath is :  /Downloads/sample.jpg
+Retrieving file from path  /Downloads/sample.jpg
+Sending the file to user with no :  8072219131
+#############Open App Logger OnePlus8 {} 2022-12-21T14:14:03.035Z
+*********** ALERT : ***************
+An error has occurred : 
+InvalidInputError is not defined
+---------
+#############Open App Logger OnePlus8 {} 2022-12-21T14:14:03.035Z
+Available RAM before adding app :  6.267
+Available RAM after adding app :  5.9670000000000005
+GETTING INSTALLED APP IN ONEPLUS 8
+OnePlus8
+G E T T I N G   V A L U E   F R O M   M A I N  F U N C T I O N
+{
+  whatsapp: 72,
+  instagram: 82,
+  facebook: 68,
+  google_pay: 43,
+  google_meet: undefined
+}
+G E T T I N G   V A L U E   F R O M   C A C H E
+{
+  whatsapp: 72,
+  instagram: 82,
+  facebook: 68,
+  google_pay: 43,
+  google_meet: undefined
+}
+G E T T I N G   V A L U E   F R O M   C A C H E
+{
+  whatsapp: 72,
+  instagram: 82,
+  facebook: 68,
+  google_pay: 43,
+  google_meet: undefined
+}
+ASDDF :  {
+  whatsapp: {
+    version: 72,
+    storage_size_in_gb: 0.123,
+    size_consum_in_ram_in_gb: 0.233,
+    open_camera: [Function: open_camera],
+    open_chats_tab: [Function: open_chats_tab],
+    open_status_tab: [Function: open_status_tab],
+    open_calls_tab: [Function: open_calls_tab],
+    get_app_info: [Function: get_app_info],
+    send_file_to_user: [Function: send_file_to_user],
+    send_file: [Function: send_file]
+  },
+  instagram: {
+    version: 82,
+    storage_size_in_gb: 0.456,
+    size_consum_in_ram_in_gb: 0.3,
+    open_home_feed: [Function: open_home_feed],
+    open_reels: [Function: open_reels],
+    open_settings_page: [Function: open_settings_page]
+  },
+  facebook: {
+    version: 68,
+    storage_size_in_gb: 0.789,
+    size_consum_in_ram_in_gb: 0.3
+  },
+  google_pay: {
+    version: 43,
+    storage_size_in_gb: 0.12,
+    size_consum_in_ram_in_gb: 0.2,
+    pay_to_number: [Function: pay_to_number],
+    provide_gift_vouchers: [GeneratorFunction: provide_gift_vouchers]
+  },
+  google_meet: { join_session: [AsyncFunction: join_session] }
+}
+******************* ONEPLUS GPAY TRANSACTION RELATED ******************
+User requesting to pay Rs. 10 to number :  8072219131
+DEBUG 2 :  sbi
+DEBUG 1 :  {
+  '12345678912345678': { account_name: 'Arun_1', upi_pin: '5678' },
+  '8765432187654321': { account_name: 'Arun_2', upi_pin: '2468' }
+}
+UPI PWD ip :  5678 type is :  string
+UPI BEING SET :  5678 type is :  string
+INSIDE THEN BLOCK OF PROMISES : Phone password verified successfully
+User requesting to pay Rs. 10 to number :  8072219131
+DEBUG 2 :  sbi
+DEBUG 1 :  {
+  '12345678912345678': { account_name: 'Arun_1', upi_pin: '5678' },
+  '8765432187654321': { account_name: 'Arun_2', upi_pin: '2468' }
+}
+UPI PWD ip :  5678 type is :  string
+UPI BEING SET :  5678 type is :  string
+INSIDE THEN BLOCK OF PROMISES : Phone password verified successfully
+User requesting to pay Rs. 10 to number :  8072219131
+DEBUG 2 :  sbi
+DEBUG 1 :  {
+  '12345678912345678': { account_name: 'Arun_1', upi_pin: '5678' },
+  '8765432187654321': { account_name: 'Arun_2', upi_pin: '2468' }
+}
+UPI PWD ip :  5678 type is :  string
+UPI BEING SET :  5678 type is :  string
+INSIDE THEN BLOCK OF PROMISES : Phone password verified successfully
+User requesting to pay Rs. 10 to number :  8072219131
+DEBUG 2 :  sbi
+DEBUG 1 :  {
+  '12345678912345678': { account_name: 'Arun_1', upi_pin: '5678' },
+  '8765432187654321': { account_name: 'Arun_2', upi_pin: '2468' }
+}
+UPI PWD ip :  5678 type is :  string
+UPI BEING SET :  5678 type is :  string
+INSIDE THEN BLOCK OF PROMISES : Phone password verified successfully
+User requesting to pay Rs. 10 to number :  8072219131
+DEBUG 2 :  sbi
+DEBUG 1 :  {
+  '12345678912345678': { account_name: 'Arun_1', upi_pin: '5678' },
+  '8765432187654321': { account_name: 'Arun_2', upi_pin: '2468' }
+}
+UPI PWD ip :  5678 type is :  string
+UPI BEING SET :  5678 type is :  string
+INSIDE THEN BLOCK OF PROMISES : Phone password verified successfully
+User requesting to pay Rs. 10 to number :  8072219131
+DEBUG 2 :  sbi
+DEBUG 1 :  {
+  '12345678912345678': { account_name: 'Arun_1', upi_pin: '5678' },
+  '8765432187654321': { account_name: 'Arun_2', upi_pin: '2468' }
+}
+UPI PWD ip :  5678 type is :  string
+UPI BEING SET :  5678 type is :  string
+INSIDE THEN BLOCK OF PROMISES : Phone password verified successfully
+User requesting to pay Rs. 10 to number :  8072219131
+DEBUG 2 :  sbi
+DEBUG 1 :  {
+  '12345678912345678': { account_name: 'Arun_1', upi_pin: '5678' },
+  '8765432187654321': { account_name: 'Arun_2', upi_pin: '2468' }
+}
+UPI PWD ip :  5678 type is :  string
+UPI BEING SET :  5678 type is :  string
+INSIDE THEN BLOCK OF PROMISES : Phone password verified successfully
+User requesting to pay Rs. 10 to number :  8072219131
+DEBUG 2 :  sbi
+DEBUG 1 :  {
+  '12345678912345678': { account_name: 'Arun_1', upi_pin: '5678' },
+  '8765432187654321': { account_name: 'Arun_2', upi_pin: '2468' }
+}
+UPI PWD ip :  5678 type is :  string
+UPI BEING SET :  5678 type is :  string
+INSIDE THEN BLOCK OF PROMISES : Phone password verified successfully
+Checking camera functionalities 
+******** TRANSACTION COMPLETED ********
+Getting phone data 
+{ Android: 12, Oxygen: 10 }
+Running apps before closing :  [ 'whatsapp', 'instagram' ]
+Closing App now 
+#############Close App Logger OnePlus8 {} 2022-12-21T14:14:03.036Z
+Closing App now :  whatsapp
+TOP CLOSING CHECK :  [ 'whatsapp', 'instagram' ]
+RAM Size before closing :  5.9670000000000005
+Running apps before closing :::  [ 'whatsapp', 'instagram' ]
+Index :   0  App present  :  whatsapp
+Running apps after killing process from RAM :  [ 'instagram' ]
+RAM Size after closing :  6.2
+Running apps after closing :  [ 'instagram' ]
+#############Close App Logger OnePlus8 {} 2022-12-21T14:14:03.036Z
+Closing App now :  messages
+TOP CLOSING CHECK :  [ 'instagram' ]
+*********** ALERT : ***************
+An error has occurred : 
+InvalidInputError is not defined
+***********
+
+***********
+$$$$$$$$$$$$$$$$$$$$$ LOGGGGS PRINTING STARTED $$$$$$$$$$$$$$$$$$$$$
+TIMESTAMP :  2022-12-21T14:14:03.033Z
+ACTION PERFORMED :  Assembling components of OnePlus8 phone
+-------------------
+TIMESTAMP :  2022-12-21T14:14:03.034Z
+ACTION PERFORMED :  User requesting to open whatsapp app
+-------------------
+TIMESTAMP :  2022-12-21T14:14:03.034Z
+ACTION PERFORMED :  Successfully opened whatsapp app
+-------------------
+TIMESTAMP :  2022-12-21T14:14:03.035Z
+ACTION PERFORMED :  User requesting to open youtube app
+-------------------
+TIMESTAMP :  2022-12-21T14:14:03.035Z
+ACTION PERFORMED :  Failed to open youtube app due to error InvalidInputError is not defined
+-------------------
+TIMESTAMP :  2022-12-21T14:14:03.035Z
+ACTION PERFORMED :  User requesting to open instagram app
+-------------------
+TIMESTAMP :  2022-12-21T14:14:03.035Z
+ACTION PERFORMED :  Successfully opened instagram app
+-------------------
+TIMESTAMP :  2022-12-21T14:14:03.036Z
+ACTION PERFORMED :  User requesting to close whatsapp app
+-------------------
+TIMESTAMP :  2022-12-21T14:14:03.036Z
+ACTION PERFORMED :  Successfully closed whatsapp
+-------------------
+TIMESTAMP :  2022-12-21T14:14:03.036Z
+ACTION PERFORMED :  User requesting to close messages app
+-------------------
+TIMESTAMP :  2022-12-21T14:14:03.036Z
+ACTION PERFORMED :  Failed to close messages app due to error InvalidInputError is not defined
+-------------------
+$$$$$$$$$$$$$$$$$$$$$ LOGGGGS PRINTING COMPLETED $$$$$$$$$$$$$$$$$$$$$
+DEBUG PRINT :  []
+Model Name -  Samsung Z1 Ultra
+Internal Memory -  512  ::: OS Version -  12 ::: Display -  Samsung Display ::: OS Type -  Android ::: RAM -  8 ::: Brand -  Samsung
+Custom OS Name -  One UI Custom OS Version - 7
+Available RAM now :  6.6 GB
+Operating your smartphone with a keyboard, mouse, and computer monitor
+This is a Director View
+You are recording using ultra wide lenses
+***********
+
+$$$$$$$$$$$$$$$$$$$$$ LOGGGGS PRINTING STARTED $$$$$$$$$$$$$$$$$$$$$
+TIMESTAMP :  2022-12-21T14:14:03.037Z
+ACTION PERFORMED :  Assembling components of Samsung Z1 Ultra phone
+-------------------
+$$$$$$$$$$$$$$$$$$$$$ LOGGGGS PRINTING COMPLETED $$$$$$$$$$$$$$$$$$$$$
+***********
+Model Name -  iPhone 14
+Internal Memory -  512  ::: OS Version -  15 ::: Display -  iPhone Display ::: OS Type -  iOS ::: RAM -  4 ::: Brand -  Apple
+Available RAM now :  3.5 GB
+***********
+#############Open App Logger iPhone14 {} 2022-12-21T14:14:03.037Z
+Available RAM before adding app :  3.5
+Available RAM after adding app :  3.38
+....WhatsApp Individual and Group Chats Open ....
+....WhatsApp Status Open ....
+#############Open App Logger iPhone14 {} 2022-12-21T14:14:03.037Z
+Available RAM before adding app :  3.38
+Available RAM after adding app :  3.1599999999999997
+Running apps before closing :  [ 'whatsapp', 'instagram' ]
+Closing App now 
+Running apps after closing :  [ 'whatsapp', 'instagram' ]
+***********
+$$$$$$$$$$$$$$$$$$$$$ LOGGGGS PRINTING STARTED $$$$$$$$$$$$$$$$$$$$$
+TIMESTAMP :  2022-12-21T14:14:03.037Z
+ACTION PERFORMED :  Assembling components of iPhone
+-------------------
+TIMESTAMP :  2022-12-21T14:14:03.037Z
+ACTION PERFORMED :  User requesting to open whatsapp app
+-------------------
+TIMESTAMP :  2022-12-21T14:14:03.037Z
+ACTION PERFORMED :  Successfully opened whatsapp app
+-------------------
+TIMESTAMP :  2022-12-21T14:14:03.037Z
+ACTION PERFORMED :  User requesting to open instagram app
+-------------------
+TIMESTAMP :  2022-12-21T14:14:03.037Z
+ACTION PERFORMED :  Successfully opened instagram app
+-------------------
+$$$$$$$$$$$$$$$$$$$$$ LOGGGGS PRINTING COMPLETED $$$$$$$$$$$$$$$$$$$$$
+------------------------
+Apps running in OnePlus phone :  [ 'instagram' ]
+Apps running in iPhone 14 phone :  [ 'whatsapp', 'instagram' ]
+Apps running in Samsung phone :  []
+------------------------
+------------------------
+Apps running in OnePlus phone :  [ 'instagram' ]
+Apps running in iPhone 14 phone :  [ 'whatsapp', 'instagram' ]
+Apps running in Samsung phone :  []
+------------------------
+Checking mic functionalities 
+------------------------
+Apps running in OnePlus phone :  [ 'instagram' ]
+Apps running in iPhone 14 phone :  [ 'whatsapp', 'instagram' ]
+Apps running in Samsung phone :  []
+------------------------
+Available RAM in ONEPLUS before closing running apps :  6.2
+#############Close App Logger OnePlus8 {} 2022-12-21T14:14:03.038Z
+Closing App now :  instagram
+TOP CLOSING CHECK :  [ 'instagram' ]
+RAM Size before closing :  6.2
+Running apps before closing :::  [ 'instagram' ]
+Index :   0  App present  :  instagram
+Running apps after killing process from RAM :  []
+RAM Size after closing :  6.5
+Available RAM in ONEPLUS now :  6.5
+Available RAM in iPhone before closing running apps :  3.1599999999999997
+iPhone running apps now :  [ 'whatsapp', 'instagram' ]  LENGTH :  2
+iPhone elements :  whatsapp
+#############Close App Logger iPhone14 {} 2022-12-21T14:14:03.038Z
+Closing App now :  whatsapp
+TOP CLOSING CHECK :  [ 'whatsapp', 'instagram' ]
+RAM Size before closing :  3.1599999999999997
+Running apps before closing :::  [ 'whatsapp', 'instagram' ]
+Index :   0  App present  :  whatsapp
+Running apps after killing process from RAM :  [ 'instagram' ]
+RAM Size after closing :  3.28
+Available RAM in iPhone now :  3.28
+#############Close App Logger iPhone14 {} 2022-12-21T14:14:03.038Z
+Closing App now :  instagram
+TOP CLOSING CHECK :  [ 'instagram' ]
+RAM Size before closing :  3.28
+Running apps before closing :::  [ 'instagram' ]
+Index :   0  App present  :  instagram
+Running apps after killing process from RAM :  []
+RAM Size after closing :  3.5
+Available RAM in Samsung before closing running apps :  6.6
+Closed all running apps now
+Joining the remote session as requested with meeting link as  https://meet.google.com/id=144deqwqss4556
+Transaction done successfully
+Transaction done successfully
+Transaction done successfully
+Transaction done successfully
+Transaction done successfully
+Transaction done successfully
+Transaction done successfully
+Transaction done successfully
+Status of transaction 1 is :  success
+YOU HAVE RECEIVED A COUPON WORTH RS :  50 Thanks for using GPay !!! 
+Status of transaction 1 is :  success
+YOU HAVE RECEIVED A COUPON WORTH RS :  50 Thanks for using GPay !!! 
+Status of transaction 1 is :  success
+YOU HAVE RECEIVED A COUPON WORTH RS :  50 Thanks for using GPay !!! 
+Status of transaction 1 is :  success
+YOU HAVE RECEIVED A COUPON WORTH RS :  50 Thanks for using GPay !!! 
+Status of transaction 1 is :  success
+YOU HAVE RECEIVED A COUPON WORTH RS :  50 Thanks for using GPay !!! 
+Status of transaction 1 is :  success
+YOU HAVE RECEIVED A COUPON WORTH RS :  100 Thanks for using GPay !!! 
+Status of transaction 1 is :  success
+YOU HAVE RECEIVED A COUPON WORTH RS :  100 Thanks for using GPay !!! 
+Status of transaction 1 is :  success
+YOU HAVE RECEIVED A COUPON WORTH RS :  100 Thanks for using GPay !!! 
+OnePlus 8 is taking the photo!!!
+........Taking Photo Smile Please ........
+Samsung Z1 Ultra is taking the photo!!!
+........Taking Photo Smile Please ........
+------------------------
+Apps running in OnePlus phone :  []
+Apps running in iPhone 14 phone :  []
+Apps running in Samsung phone :  []
+------------------------
+------------------------
+Apps running in OnePlus phone :  []
+Apps running in iPhone 14 phone :  []
+Apps running in Samsung phone :  []
+------------------------
+
+[Done] exited with code=0 in 5.08 seconds
+
+
+*/
