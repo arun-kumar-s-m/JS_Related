@@ -37,3 +37,29 @@ export function runningapps(){
     console.log('------------------------');
     return oneplus_running_apps.length > 0 || iphone_running_apps.length > 0 || samsung_running_apps.length > 0;
 }
+
+export function notifyGPayServer(user_name,amount,to_number,transaction_status,is_voucher_provided,voucher_amount){
+    console.log(user_name,' has made a payment of Rs.',amount,' to number : ',to_number,' && its transaction status is ',transaction_status, ' Voucher Provided : ',is_voucher_provided,'Voucher Amount : ',voucher_amount );
+}
+
+export function curryFunction(func){
+    return function(uname){
+        console.log('inner call 1');
+        return function(amount){
+            console.log('inner call 2');
+            return function(to_number){
+                console.log('inner call 3');
+                return function(transaction_status){
+                    console.log('inner call 4');
+                    return function(is_voucher_provided){
+                        console.log('inner call 5');
+                        return function(voucher_amount){
+                            console.log('inner call 6');
+                            return notifyGPayServer(uname,amount,to_number,transaction_status,is_voucher_provided,voucher_amount);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

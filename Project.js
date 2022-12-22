@@ -2,9 +2,12 @@ import Samsung_Z1_Ultra from './Phone/Android/Samsung/Samsung_Z1_Ultra.js';
 import iPhone14 from './Phone/iOS/iPhone14.js';
 import OnePlus8 from './Phone/Android/OnePlus/OnePlus8.js';
 import InvalidInputError from './Error/InvalidInputError.js';
-import {print as print,cacheDecorator as cacheDecorator, runningapps as runningapps} from './Helper_functions/helper.js';
+import {print, cacheDecorator, runningapps, notifyGPayServer,curryFunction} from './Helper_functions/helper.js';
 export {oneplus8,samsung_Z1_Ultra,iphone14};
+import pkg from 'lodash.curry';
+// const {curry} = pkg;
 
+// import {curry} from 'lodash.curry';
 // import Phone from './Phone.js';
 
 // const Phone = require('./Phone.js');
@@ -991,14 +994,24 @@ let closing_apps_running_for_longer_time = new Promise(function(resolve,reject){
 
 // GPAY TRANSACTIONS REL
 let obj33 = oneplus8.getAppDetails()['google_pay'].provide_gift_vouchers();
+// let curryObject = curryFunction(notifyGPayServer);
+let curryObject = pkg(notifyGPayServer);
 async function doPaymentAndGetVoucher(object){
     try{
         let  result = await object.getAppDetails()['google_pay'].pay_to_number('1234',10,8072219131,'sbi',12345678912345678,'5678');
+        let partFunctionTill_1 = curryObject(object.getUserName(),10,8072219131,result.toUpperCase());
+        // let curry = await require('lodash.curry');
         console.log('Status of transaction 1 is : ',result);
+        let partFunctionTill_2;
         if(result === 'success'){
-            console.log('YOU HAVE RECEIVED A COUPON WORTH RS : ',obj33.next().value,'Thanks for using GPay !!! ');
+            let voucher_amount = obj33.next().value;
+            // curryObject(object.getUserName(),10,8072219131,result,'YES',voucher_amount);
+            partFunctionTill_2 = partFunctionTill_1('YES',voucher_amount);
+            console.log('YOU HAVE RECEIVED A COUPON WORTH RS : ',voucher_amount,'Thanks for using GPay !!! ');
         }
         else{
+            partFunctionTill_2 = partFunctionTill_1('NO','NULL');
+            // curryObject(object.getUserName(),10,8072219131,result,'NO','NULL');
             throw new InvalidInputError('PHONE PASSWORD or UPI PASSWORD provided for the bank account is wrong');
         }
     }
@@ -1006,6 +1019,34 @@ async function doPaymentAndGetVoucher(object){
         console.log('Error occurred while making transaction : ',Error);
     }
 }
+
+/*
+  Status of transaction 1 is :  success
+  arun  has made a payment of Rs. 10  to number :  8072219131  && its transaction status is  SUCCESS  Voucher Provided :  YES Voucher Amount :  50
+  YOU HAVE RECEIVED A COUPON WORTH RS :  50 Thanks for using GPay !!! 
+  Status of transaction 1 is :  success
+  arun  has made a payment of Rs. 10  to number :  8072219131  && its transaction status is  SUCCESS  Voucher Provided :  YES Voucher Amount :  50
+  YOU HAVE RECEIVED A COUPON WORTH RS :  50 Thanks for using GPay !!! 
+  Status of transaction 1 is :  success
+  arun  has made a payment of Rs. 10  to number :  8072219131  && its transaction status is  SUCCESS  Voucher Provided :  YES Voucher Amount :  50
+  YOU HAVE RECEIVED A COUPON WORTH RS :  50 Thanks for using GPay !!! 
+  Status of transaction 1 is :  success
+  arun  has made a payment of Rs. 10  to number :  8072219131  && its transaction status is  SUCCESS  Voucher Provided :  YES Voucher Amount :  50
+  YOU HAVE RECEIVED A COUPON WORTH RS :  50 Thanks for using GPay !!! 
+  Status of transaction 1 is :  success
+  arun  has made a payment of Rs. 10  to number :  8072219131  && its transaction status is  SUCCESS  Voucher Provided :  YES Voucher Amount :  50
+  YOU HAVE RECEIVED A COUPON WORTH RS :  50 Thanks for using GPay !!! 
+  Status of transaction 1 is :  success
+  arun  has made a payment of Rs. 10  to number :  8072219131  && its transaction status is  SUCCESS  Voucher Provided :  YES Voucher Amount :  100
+  YOU HAVE RECEIVED A COUPON WORTH RS :  100 Thanks for using GPay !!! 
+  Status of transaction 1 is :  success
+  arun  has made a payment of Rs. 10  to number :  8072219131  && its transaction status is  SUCCESS  Voucher Provided :  YES Voucher Amount :  100
+  YOU HAVE RECEIVED A COUPON WORTH RS :  100 Thanks for using GPay !!! 
+  Status of transaction 1 is :  success
+  arun  has made a payment of Rs. 10  to number :  8072219131  && its transaction status is  SUCCESS  Voucher Provided :  YES Voucher Amount :  100
+  YOU HAVE RECEIVED A COUPON WORTH RS :  100 Thanks for using GPay !!! 
+*/
+
 
 /*
     Status of transaction 1 is :  success

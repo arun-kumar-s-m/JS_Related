@@ -11,3 +11,9 @@ export default class OnePlus extends Android{
     }
 
 }
+
+// export default class similar{
+//     print(){
+//         console.log('HI ARUN...!!!');
+//     }
+// }
